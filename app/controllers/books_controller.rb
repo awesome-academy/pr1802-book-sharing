@@ -9,6 +9,14 @@ class BooksController < ApplicationController
   def create
     @book = current_user.books.build book_params
     if @book.save
+      params[:categories].each do |categories|
+        categories = BookCategory.new(:category_id => categories, :book_id => @book_id)
+        if categories.valid?
+          categories.save
+        else
+          @errors += categories.errors
+        end
+      end
       flash[:success] = t ".flash_success"
       redirect_to root_url
     else

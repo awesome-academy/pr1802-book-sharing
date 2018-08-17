@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: :edit
   resources :books, only: %i(show edit update create destroy)
+  resources :categories
   scope "(:locale)", locale: /en|vi/ do
     root 'static_pages#home'
   end
