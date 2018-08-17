@@ -1,0 +1,34 @@
+<li id="comment-<%= comment.id %>">
+  <%= link_to gravatar_for(comment.user, size: 50), comment.user %>
+  <span class="user"><%= link_to comment.user.name, comment.user %></span>
+  <br />
+  <span class="timestamp">
+    <%= t ".commented", time: time_ago_in_words(comment.created_at) %>
+      <% if current_user? comment.user %>
+      <%= link_to t(".edit"), "#editForm#{comment.id}", data: {toggle: "collapse"}, aria: {expanded: "false", controls: "#editForm#{comment.id}"} %>
+      <%= link_to t(".delete"), comment, method: :delete, remote: true,
+        data: { confirm: t(".confirm") } %>
+    <% end %>
+  </span>
+  <br />
+  <span class="timestamp">
+    <%= t ".updated", time: time_ago_in_words(comment.updated_at) %>
+  </span>
+  <span class="content">
+    <p><%= comment.content %></p>
+  </span>
+  <div class="collapse" id=<%="editForm#{comment.id}"%>>
+    <% if !current_user? nil %>
+      <%= form_for comment, remote: true do |f| %>
+        <%= render 'shared/error_messages', object: comment %>
+        <%= f.hidden_field :book_id, value: comment.book.id %>
+        <%= f.hidden_field :user_id, value: comment.user.id %>
+        <div class="comment_form">
+          <%= f.label :user_name, current_user.name %>
+          <%= f.text_area :content, placeholder: t(".placeholder"), value: comment.content %>
+        </div>     
+        <%= f.submit t(".create"), class: "btn btn-primary" %>
+      <% end %> 
+    <% end %>
+  </div>
+</li>

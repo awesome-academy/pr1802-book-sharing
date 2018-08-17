@@ -8,6 +8,8 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find_by id: params[:id]
+    @comments = @book.comments.all
+    @comment = @book.comments.build(user_id: current_user.id) if logged_in?
     if @book.nil?
       flash[:info] = t ".flash_info"
       redirect_to root_url
