@@ -6,6 +6,7 @@
     <%= f.label :description %>
     <%= f.cktext_area :description, rows: 10 %>
   </div>
+  <%= f.select :categories, Category.all.collect {|x| [x.name, x.id]}, {}, :multiple => true %>
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
   <span class="picture">
     <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png" %>
