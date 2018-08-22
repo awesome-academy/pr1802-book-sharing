@@ -29,3 +29,12 @@ en:
       flash_success: "User deleted"
     find_user:
       flash_success: "User does not exist!"
+  password_resets:
+    update:
+      cant_be_empty: "can't be empty"
+      flash_success: "Password has been reset."
+    check_expiration:
+      flash_danger: "Password reset has expired."
+    create:
+      flash_infor: "Email sent with password reset instructions"
+      flash_danger: "Email address not found"

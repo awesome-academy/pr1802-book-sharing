@@ -43,8 +43,18 @@ vi:
     show:
       edit: "Chỉnh sửa"
       back: "Quay lại"
+  password_resets:
+    new:
+      forgot_password: "Quên mật khẩu"   
+      submit: "Gửi đi"
+    edit:
+      reset_password: "Đặt lại mật khẩu"
+      update_password: "Cập nhật mật khẩu"
+      confirmation: "Xác nhận"
+      password: "Mật khẩu"    
   sessions:
     new:
+      forgot_password: "quen mat khau ?"
       title: "Đăng nhập"
       submit: "Đăng nhập"
       new_user: "Người dùng mới?"
