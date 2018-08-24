@@ -29,3 +29,12 @@ vi:
       flash_success: "Người dùng đã được xoá"
     find_user:
       flash_success: "Người dùng không tồn tại!"
+  password_resets:
+    update:
+      cant_be_empty: "khong the rong"
+      flash_success: "mat khau da duoc dat lai."
+    check_expiration:
+      flash_danger: "Đặt lại mật khẩu đã hết hạn."
+    create:
+      flash_infor: "Email được gửi với hướng dẫn đặt lại mật khẩu"
+      flash_danger: "khong tim thay dia chi email"

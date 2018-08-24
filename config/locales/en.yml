@@ -74,8 +74,18 @@ en:
     show:
       edit: "Edit"
       back: "Back"
+  password_resets:
+    new:
+      forgot_password: "Forgot Password"   
+      submit: "Submit"
+    edit:
+      reset_password: "Reset Password"
+      update_password: "Update Password"
+      confirmation: "Confirmation"
+      password: "Password"
   sessions:
     new:
+      forgot_password: "Forgot Password ?"
       title: "Log in"
       submit: "Log in"
       new_user: "New user?"
