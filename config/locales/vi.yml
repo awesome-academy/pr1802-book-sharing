@@ -73,6 +73,9 @@ vi:
     error_messages:
       form_contains: "Biểu mẫu chứa %{count}."
       error: "lỗi"
+    stats:
+      followers: "được theo dõi"
+      following: "đang theo dõi"
   static_pages:
     home:
       recently_published: "Xuất Bản Gần Đây"
@@ -95,6 +98,10 @@ vi:
       save_changes: "Lưu thay đổi"
       update_profile: "Cập nhật hồ sơ của bạn"
       change: "Thay đổi"
+    follow:
+      follow: "Theo dõi"
+    unfollow:
+      unfollow: "Bơ"
     index:
       title: "Tất cả người dùng"
     new:
@@ -107,3 +114,6 @@ vi:
         projects since 2012."
       book: "Sách"
       books: "Sách"
+    show_follow:
+      view_my_profile: "xem trang cá nhân"
+      book: "Số sách:"

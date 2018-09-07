@@ -14,8 +14,10 @@ class Book < ApplicationRecord
   validate :picture_size
 
   scope :recently_published, -> { order(created_at: :desc).limit 6 }
+  scope :find_feed, ->(following_ids){where user_id: following_ids}
 
   def average_rating
+    return 0 if ratings.blank?
     ratings.sum(:score) / ratings.size
   end
 

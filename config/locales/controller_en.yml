@@ -33,3 +33,7 @@ en:
       flash_success: "User deleted"
     find_user:
       flash_info: "User does not exist!"
+    following:
+      following: "Following"
+    followers:
+      followers: "Followers"

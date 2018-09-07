@@ -52,7 +52,9 @@
           </div>
           <div class="col-md-10">
             <%= link_to @user.name, @user, class: "link-dark" %>
-            <a href="#" class="btn follow">Follow</a>
+            <span id="follow_form">
+              <%= render "users/follow_form" if logged_in? %>
+            </span>
             <span class="author-description">
               <%= t ".dummy_description" %>
             </span>
@@ -84,7 +86,7 @@
             <br>
             <span class="post-date">
                <strong><%= t ".your_rating" %></strong>
-               <span id="user_star" data-id=<%= @rating.id %> data-score=<%= @rating.score %>></span>
+               <span id="user_star" data-id=<%= @rating.id.to_i %> data-score=<%= @rating.score %> data-book-id=<%= @book.id %>></span>
             </span>
           </div>
         </div>

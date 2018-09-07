@@ -34,3 +34,6 @@
 
 # Ignore demo files
 /app/assets/images/demopic
+
+# Ignore .vscode files
+.vscode/

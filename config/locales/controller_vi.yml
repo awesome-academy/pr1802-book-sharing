@@ -33,3 +33,7 @@ vi:
       flash_success: "Người dùng đã được xoá"
     find_user:
       flash_info: "Người dùng không tồn tại!"
+    following:
+      following: "Đang theo dõi"
+    followers:
+      followers: "Được theo dõi"

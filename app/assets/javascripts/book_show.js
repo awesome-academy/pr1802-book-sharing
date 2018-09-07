@@ -23,11 +23,13 @@ $(document).on('turbolinks:load', function() {
         $.ajax({
           url: '/ratings/' + $(this).attr('data-id'),
           type: 'PATCH',
-          data: { score: score }
+          data: { score: score, book_id: $(this).attr('data-book-id') }
         }).done(function (data){
+          attr = $.parseJSON(data)
+          $('#user_star').attr('data-id', attr.id)
           $('#star').raty({
             readOnly: true,
-            score: data,
+            score: attr.score,
             path: '/assets/'
           });
         });

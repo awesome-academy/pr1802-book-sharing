@@ -104,6 +104,9 @@ en:
     error_messages:
       form_contains: "The form contains %{count}."
       error: "error"
+    stats:
+        followers: "followers"
+        following: "following"
   static_pages:
     home:
       recently_published: "Recently Published"
@@ -126,6 +129,10 @@ en:
       save_changes: "Save changes"
       update_profile: "Update your profile"
       change: "Change"
+    follow:
+      follow: "Follow"
+    unfollow:
+      unfollow: "Unfollow"
     index:
       title: "All users"
     new:
@@ -138,3 +145,6 @@ en:
         projects since 2012."
       book: "Book"
       books: "Books"
+    show_follow:
+      view_my_profile: "view my profile"
+      book: "Books:"

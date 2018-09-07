@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :correct_user, only: %i(edit update destroy)
 
   def index
-    @books = Book.paginate page: params[:page]
+    @books = Book.find_feed(current_user.following_ids << current_user.id).paginate page: params[:page]
   end
 
   def show
