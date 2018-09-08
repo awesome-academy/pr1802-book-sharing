@@ -105,8 +105,8 @@ en:
       form_contains: "The form contains %{count}."
       error: "error"
     stats:
-        followers: "followers"
-        following: "following"
+      followers: "followers"
+      following: "following"
   static_pages:
     home:
       recently_published: "Recently Published"
@@ -146,5 +146,8 @@ en:
       book: "Book"
       books: "Books"
     show_follow:
-      view_my_profile: "view my profile"
       book: "Books:"
+      dummy_description: |
+        "Core member of Team 3 and creater of <b>"Modern Book Sharing"</b>
+        theme that you're currently previewing. Developing semi-professional
+        projects since 2012."

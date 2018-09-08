@@ -115,5 +115,8 @@ vi:
       book: "Sách"
       books: "Sách"
     show_follow:
-      view_my_profile: "xem trang cá nhân"
       book: "Số sách:"
+      dummy_description: |
+        "Core member of Team 3 and creater of <b>"Modern Book Sharing"</b>
+        theme that you're currently previewing. Developing semi-professional
+        projects since 2012."
