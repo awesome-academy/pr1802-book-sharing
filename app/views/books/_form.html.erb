@@ -2,9 +2,11 @@
   <%= render "shared/error_messages", object: book %>
   <div class="field">
     <%= f.label :title %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
+
     <%= f.label :description %>
     <%= f.cktext_area :description, rows: 10 %>
+
     <%= f.label :categories %>
     <ul class="book_form">
       <%= collection_check_boxes(:book, :category_ids, Category.all, :id, :name) do |category| %>
@@ -13,6 +15,7 @@
         </li>
       <% end %>
     </ul>
+
     <%= f.label :authors %>
     <ul class="book_form">
       <%= collection_check_boxes(:book, :author_ids, Author.all, :id, :name) do |author| %>
@@ -22,6 +25,7 @@
       <% end %>
     </ul>
   </div>
+  
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
   <span class="picture">
     <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png" %>

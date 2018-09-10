@@ -48,12 +48,7 @@ span.picture {
 
 .book_form {
   list-style: none;
-  overflow-y: auto;
-
-  input {
-    width: auto;
-  }
-
+  // overflow-y: auto;
   li {
     display: inline-block;
   }
