@@ -33,7 +33,6 @@ vi:
       publish: "Xuất bản"
     show:
       share: "Chia sẻ"
-      comment: "Bình luận"
       dummy_description: |
         "Core member of Team 3 and creater of <b>"Modern Book Sharing"</b>
         theme that you're currently previewing. Developing semi-professional
@@ -45,6 +44,7 @@ vi:
       delete_confirm: "Bạn chắc chắn chứ?"
       average_rating: "Xếp hạng trung bình:"
       your_rating: "Xếp hạng của bạn:"
+      comment: "Bình luận"
       dummy_related_title: "How travelling can change your life"
   categories:
     form:
@@ -126,13 +126,11 @@ vi:
         projects since 2012."
   comments:
     comment:
-      commented: "bình luận "
+      commented: "Bình luận %{time} trước."
       edit: "Sửa"
       delete: "Xóa"
       confirm: "Bạn có chắn chắn xóa không?"
-      updated: "cập nhật"
-      placeholder: "Bình luận..."
-      create: "Tạo bình luận"
+      updated: "Cập nhật %{time} trước."
     form:
       placeholder: "Bình luận..."
-      create: "Tạo bình luận"
+      comment: "Bình luận"

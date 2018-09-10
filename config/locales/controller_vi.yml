@@ -5,10 +5,10 @@ vi:
   books:
     show:
       flash_info: "Sách không tồn tại!"
-    update:
-      flash_success: "Sách đã được cập nhật!"
     create:
       flash_success: "Sách đã được tạo!"
+    update:
+      flash_success: "Sách đã được cập nhật!"
     destroy:
       flash_success: "Sách đã được xoá"
   categories:
@@ -20,6 +20,11 @@ vi:
       flash_success: "Danh mục đã được xóa"
     find_category:
       flash_info: "Danh mục không tồn tại!"
+  comments:
+    create:
+      flash_success: "Bình luận đã được tạo!"
+    destroy:
+      flash_success: "Bình luận đã được xoá"
   sessions:
     create:
       message: "Tài khoản chưa kích hoạt. Kiểm tra email để kích hoạt."
