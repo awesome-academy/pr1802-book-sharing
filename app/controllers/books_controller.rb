@@ -57,7 +57,7 @@ class BooksController < ApplicationController
   attr_reader :book
 
   def book_params
-    params.require(:book).permit :name, :description, pictures: [],
+    params.require(:book).permit :title, :description, pictures: [],
       category_ids: [], author_ids: []
   end
 

@@ -8,7 +8,10 @@ class Book < ApplicationRecord
   has_many :book_authors, dependent: :destroy
   has_many :authors, through: :book_authors
   validates :user_id, presence: true
+  validates :title, presence: true
   validates :description, presence: true, length: {maximum: 800}
+  validates :category_ids, presence: true
+  validates :author_ids, presence: true
   validate :picture_size
 
   mount_uploaders :pictures, PictureUploader
@@ -19,7 +22,7 @@ class Book < ApplicationRecord
   # static_pages/home scope
   scope :recently_published, ->{order(created_at: :desc).limit 6}
   # search/index scope
-  scope :by_title, ->(name){where "name like '%#{name}%'"}
+  scope :by_title, ->(title){where "title like ?", "%#{title}%"}
   scope :by_author_ids, ->(author_ids) do
     joins(:book_authors).where "author_id IN (?)", author_ids
   end

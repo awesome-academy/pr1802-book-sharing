@@ -30,13 +30,13 @@
 /config/master.key
 
 # Ignore MacOS's miscellaneous files
-.DS_Store
+/.DS_Store
 
 # Ignore demo files
 /app/assets/images/demopic
 
 # Ignore .vscode files
-.vscode/
+/.vscode
 
 # Ignore framgia-ci generated files
 /.framgia-ci-reports

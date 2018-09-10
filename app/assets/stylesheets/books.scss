@@ -61,3 +61,15 @@ span.picture {
     margin-bottom: 0;
   }
 }
+
+// button
+
+$green-cuong: #00ab6b;
+
+.btn-primary {
+  @include button-variant($green-cuong, darken($green-cuong, 7.5%), darken($green-cuong, 10%), lighten($green-cuong,5%), lighten($green-cuong, 10%), darken($green-cuong,30%));
+}
+
+.btn-outline-primary {
+  @include button-outline-variant($green-cuong, #222222, lighten($green-cuong,5%), $green-cuong);
+}

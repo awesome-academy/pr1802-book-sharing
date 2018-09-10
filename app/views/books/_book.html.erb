@@ -10,7 +10,7 @@
     </div>
     <div class="col-md-7">
       <div class="card-block">
-        <h2 class="card-title"><%= link_to book.name, book_path(book)%></h2>
+        <h2 class="card-title"><%= link_to book.title, book_path(book)%></h2>
         <h4 class="card-text">
           <%= sanitize book.description %>
         </h4>
