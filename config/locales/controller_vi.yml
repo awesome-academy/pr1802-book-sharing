@@ -6,11 +6,11 @@ vi:
     show:
       flash_info: "Sách không tồn tại!"
     update:
-      flash_success: "Bài viết đã được cập nhật!"
+      flash_success: "Sách đã được cập nhật!"
     create:
-      flash_success: "Bài viết đã được tạo!"
+      flash_success: "Sách đã được tạo!"
     destroy:
-      flash_success: "Bài viết đã được xoá"
+      flash_success: "Sách đã được xoá"
   categories:
     create:
       flash_success: "Danh mục đã được tạo"

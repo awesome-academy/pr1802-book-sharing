@@ -97,8 +97,10 @@
       </div>
 
       <!-- Begin Featured Image -->
-      <% if @book.picture? %>
-        <%= image_tag (@book.picture.url), class: "featured-image img-fluid" %>
+      <% if @book.pictures? %>
+        <% @book.pictures.each do |picture| %>
+          <%= image_tag picture.url, class: "featured-image img-fluid" %>
+        <% end %>
       <% end %>
       <!-- End Featured Image -->
 

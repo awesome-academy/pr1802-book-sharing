@@ -6,11 +6,11 @@ en:
     show:
       flash_info: "Book does not exist!"
     update:
-      flash_success: "Post updated!"
+      flash_success: "Book updated!"
     create:
-      flash_success: "Post created!"
+      flash_success: "Book created!"
     destroy:
-      flash_success: "Post deleted"
+      flash_success: "Book deleted"
   categories:
     create:
       flash_success: "Category created"
