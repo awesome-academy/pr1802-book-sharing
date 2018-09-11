@@ -1,5 +1,5 @@
-<%= form_for @category do |f| %>
-  <%= render "shared/error_messages", object: f.object %>
+<%= form_for category do |f| %>
+  <%= render "shared/error_messages", object: category %>
   <div class="field">
     <%= f.label :name, placeholder: t(".name") %>
     <%= f.text_field :name, id: :user_name %>

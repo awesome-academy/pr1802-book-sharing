@@ -7,8 +7,7 @@ class CategoriesController < ApplicationController
     @categories = Category.paginate page: params[:page]
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @category = Category.new
@@ -24,8 +23,7 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if category.update_attributes category_params
@@ -53,6 +51,7 @@ class CategoriesController < ApplicationController
   def find_category
     @category = Category.find_by id: params[:id]
     return if category
+
     flash[:info] = t ".flash_info"
     redirect_to root_path
   end

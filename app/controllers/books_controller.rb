@@ -31,8 +31,7 @@ class BooksController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if book.update_attributes book_params

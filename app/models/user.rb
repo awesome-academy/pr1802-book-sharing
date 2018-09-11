@@ -12,20 +12,20 @@ class User < ApplicationRecord
     foreign_key: "followed_id", dependent:   :destroy
   has_many :following, through: :active_relationships,  source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
-  validates :name, presence: true, length: { maximum: 50 }
-  validates :email, presence: true, length: { maximum: 255 },
-    format: { with: VALID_EMAIL_REGEX },
-    uniqueness: { case_sensitive: false }
+  validates :name, presence: true, length: {maximum: 50}
+  validates :email, presence: true, length: {maximum: 255},
+    format: {with: VALID_EMAIL_REGEX},
+    uniqueness: {case_sensitive: false}
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  validates :password, presence: true, length: {minimum: 6}, allow_nil: true
 
-  def User.digest string
+  def self.digest string
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
       BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
 
-  def User.new_token
+  def self.new_token
     SecureRandom.urlsafe_base64
   end
 
@@ -38,14 +38,15 @@ class User < ApplicationRecord
     update_attribute :remember_digest, nil
   end
 
-  def authenticated?(attribute, token)
-    digest = self.send("#{attribute}_digest")
+  def authenticated? attribute, token
+    digest = send("#{attribute}_digest")
     return false if digest.nil?
+
     BCrypt::Password.new(digest).is_password?(token)
   end
 
   def activate
-    update_attribute :activated,true
+    update_attribute :activated, true
     update_attribute(:activated_at, Time.zone.now)
   end
 

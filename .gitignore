@@ -37,3 +37,7 @@
 
 # Ignore .vscode files
 .vscode/
+
+# Ignore framgia-ci generated files
+.framgia-ci-reports/
+.framgia-ci-result.temp.yml
