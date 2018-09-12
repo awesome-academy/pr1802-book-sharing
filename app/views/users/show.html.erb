@@ -10,13 +10,13 @@
             <span class="author-description">
               <%= t ".dummy_description" %>
             </span>
-            <%= link_to("#", target: "_blank", class: "btn follow") do %>
+            <a class="btn follow" id="facebook" data-url=<%= request.url %>>
               <i class="fa fa-facebook"></i>
-            <% end %>
+            </a>
             <span class="dot"></span>
-            <%= link_to("#", target: "_blank", class: "btn follow") do %>
+            <a class="btn follow" id="googleplus" data-url=<%= request.url %>>
               <i class="fa fa-google-plus"></i>
-            <% end %>
+            </a>
             <% unless current_user? @user %>
               <span class="dot"></span>
               <span id="follow_form">
