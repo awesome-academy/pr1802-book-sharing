@@ -27,8 +27,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if user.update_attributes user_params
@@ -50,7 +49,7 @@ class UsersController < ApplicationController
   attr_reader :user
 
   def user_params
-    params.require(:user).permit :name, :email,:password, :password_confirmation
+    params.require(:user).permit :name, :email, :password, :password_confirmation
   end
 
   def correct_user
@@ -61,6 +60,7 @@ class UsersController < ApplicationController
   def find_user
     @user = User.find_by id: params[:id]
     return if user
+
     flash[:info] = t ".flash_info"
     redirect_to root_path
   end
