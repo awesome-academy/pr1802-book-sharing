@@ -7,9 +7,6 @@
         <div class="row post-top-meta authorpage">
           <div class="col-md-10 col-xs-12">
             <h1><%= @user.name %></h1>
-            <section class="stats">
-              <%= render "shared/stats" %>
-            </section>
             <span class="author-description">
               <%= t ".dummy_description" %>
             </span>
@@ -20,12 +17,16 @@
             <%= link_to("#", target: "_blank", class: "btn follow") do %>
               <i class="fa fa-google-plus"></i>
             <% end %>
-            <span class="dot"></span>
-            <%= render "follow_form" if logged_in? %>
-            <span class="dot"></span>
+            <% unless current_user? @user %>
+              <span class="dot"></span>
+              <span id="follow_form">
+                <%= render "follow_form" if logged_in? %>
+              </span>
+            <% end %>
           </div>
           <div class="col-md-2 col-xs-12">
             <%= link_to gravatar_for(@user, size: 50, alt: @user.name), @user %>
+            <%= render "shared/stats" %>
           </div>
         </div>
       </div>
@@ -48,6 +49,6 @@
   </div>
   <%= will_paginate @books,
     renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer,
-    class: "justify-content-center" %>
+    class: "d-flex justify-content-center" %>
 <% end %>
 </section>

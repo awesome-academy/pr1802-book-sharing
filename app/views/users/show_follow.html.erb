@@ -1,30 +1,50 @@
 <% provide :title, @title %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <%= gravatar_for @user %>
-      <h1><%= @user.name %></h1>
-      <span><%= link_to t(".view_my_profile"), @user %></span>
-      <span><b><%= t ".book" %></b> <%= @user.books.count %></span>
-    </section>
-    <section class="stats">
-      <%= render "shared/stats" %>
-      <% if @users.any? %>
-        <div class="user_avatars">
-          <% @users.each do |user| %>
-            <%= link_to gravatar_for(user, size: 30), user %>
-          <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 col-md-offset-2">
+      <div class="mainheading">
+        <div class="row post-top-meta authorpage">
+          <div class="col-md-10 col-xs-12">
+            <h1><%= @user.name %></h1>
+            <span class="author-description">
+              <%= t ".dummy_description" %>
+            </span>
+            <%= link_to "#", target: "_blank", class: "btn follow" do %>
+              <i class="fa fa-facebook"></i>
+            <% end %>
+            <span class="dot"></span>
+            <%= link_to "#", target: "_blank", class: "btn follow" do %>
+              <i class="fa fa-google-plus"></i>
+            <% end %>
+            <% unless current_user? @user %>
+              <span class="dot"></span>
+              <span id="follow_form">
+                <%= render "users/follow_form" if logged_in? %>
+              </span>
+            <% end %>
+          </div>
+          <div class="col-md-2 col-xs-12">
+            <%= link_to gravatar_for(@user, size: 50, alt: @user.name), @user %>
+            <%= render "shared/stats" %>
+            <b><%= t ".book" %></b> <%= @user.books.count %>
+          </div>
         </div>
-      <% end %>
-    </section>
-  </aside>
-  <div class="col-md-8">
-    <h3><%= @title %></h3>
-    <% if @users.any? %>
-      <ul class="users follow">
-        <%= render @users %>
-      </ul>
-      <%= will_paginate %>
-    <% end %>
+      </div>
+    </div>
   </div>
 </div>
+
+<section class="featured-posts">
+<div class="section-title">
+  <h2><span><%= @title %></span></h2>
+</div>
+<% if @users.any? %>
+  <ul class="users follow">
+    <%= render @users %>
+  </ul>
+  <%= will_paginate @users,
+    renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer,
+    class: "d-flex justify-content-center" %>
+<% end %>
+</section>
