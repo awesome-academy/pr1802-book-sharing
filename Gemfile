@@ -25,14 +25,13 @@ gem "uglifier", ">= 1.3.0"
 gem "will_paginate", "~> 3.1.0"
 
 group :development, :test do
-  gem "autoprefixer-rails", "9.1.3"
+  gem "autoprefixer-rails"
   gem "better_errors"
   gem "brakeman", require: false
   gem "bundler-audit"
   gem "byebug", platforms: %i(mri mingw x64_mingw)
   gem "database_cleaner"
-  gem "eslint-rails"
-  gem "factory_girl_rails"
+  gem "factory_bot_rails"
   gem "guard-rspec", require: false
   gem "railroady"
   gem "rails_best_practices"

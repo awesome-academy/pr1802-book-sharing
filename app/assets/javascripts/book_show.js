@@ -1,13 +1,13 @@
 $(document).on('turbolinks:load', function() {
   $(function(){
-    var topOfOthDiv = $(".hideshare").offset().top;
+    var topOfOthDiv = $('.hideshare').offset().top;
     $(window).scroll(function() {
-        if($(window).scrollTop() > topOfOthDiv) { //scrolled past the other div?
-          $(".share").hide(); //reached the desired point -- show div
-        }
-        else{
-          $(".share").show();
-        }
+      if($(window).scrollTop() > topOfOthDiv) { //scrolled past the other div?
+        $('.share').hide(); //reached the desired point -- show div
+      }
+      else{
+        $('.share').show();
+      }
     });
 
     $('#star').raty({
@@ -25,8 +25,8 @@ $(document).on('turbolinks:load', function() {
           type: 'PATCH',
           data: { score: score, book_id: $(this).attr('data-book-id') }
         }).done(function (data){
-          attr = $.parseJSON(data)
-          $('#user_star').attr('data-id', attr.id)
+          attr = $.parseJSON(data);
+          $('#user_star').attr('data-id', attr.id);
           $('#star').raty({
             readOnly: true,
             score: attr.score,
@@ -36,4 +36,4 @@ $(document).on('turbolinks:load', function() {
       }
     });
   });
-})
+});
