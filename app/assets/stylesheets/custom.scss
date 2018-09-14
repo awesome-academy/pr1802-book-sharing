@@ -7,7 +7,9 @@ $gray-medium-light: #eaeaea;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 // universal
+
 // section {
 //   overflow: auto;
 // }
@@ -100,8 +102,8 @@ aside {
 
   a {
     font-size: 1rem;
-    color: rgba(0,0,0,.6);
-    
+    color: rgba(0, 0, 0, .6);
+
     &:hover {
       text-decoration: none;
       color: #00ab6b;
@@ -132,10 +134,10 @@ aside {
 input,
 select,
 textarea {
+  // border: 1px solid #bbb;
+  // width: 100%;
+  // margin-bottom: 15px;
   @include box_sizing;
-  border: 1px solid #bbb;
-  margin-bottom: 15px;
-  width: 100%;
 }
 
 input {

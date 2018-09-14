@@ -62,7 +62,7 @@
       <% end %>
       <li class="dropdown nav-item">
         <a href="#" class="nav-link" data-toggle="dropdown">
-          <i class="fa fa-globe" aria-hidden="true"></i></b>
+          <i class="fa fa-globe" aria-hidden="true"></i>
         </a>
         <ul class="dropdown-menu">
           <li class="dropdown-item">
@@ -72,6 +72,11 @@
             <%= link_to t(".vietnamese"), {locale:"vi"}, {class: "nav-link"} %>
           </li>
         </ul>
+      </li>
+      <li class="nav-item">
+        <%= link_to searches_path, class: "nav-link" do %>
+          <i class="fa fa-search" aria-hidden="true"></i>
+        <% end %>
       </li>
     </ul>
     <!-- End Menu -->

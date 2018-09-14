@@ -94,6 +94,10 @@ en:
       edit: "Edit"
       destroy: "Destroy"
       destroy_confirm: "Are you sure?"
+  searches:
+    index:
+      close: "Close"
+      search: "Search"
   sessions:
     new:
       title: "Log in"

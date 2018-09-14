@@ -63,6 +63,10 @@ vi:
       edit: "Chỉnh sửa"
       destroy: "Xóa"
       destroy_confirm: "Bạn chắc chắn chứ?"
+  searches:
+    index:
+      close: "Đóng"
+      search: "Tìm kiếm"
   sessions:
     new:
       title: "Đăng nhập"

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :ratings, only: :update
   resources :relationships, only: %i(create destroy)
+  resources :searches, only: :index
 
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"

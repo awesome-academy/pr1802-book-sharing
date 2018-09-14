@@ -24,12 +24,19 @@ users = User.order(:created_at).take(6)
   end
 end
 
+books = Book.all
 10.times do |n|
   name  = Faker::Book.author
   Author.create! name: name
+end
+books.each do |book|
+  book.author_ids = rand(1..10)
 end
 
 5.times do |n|
   name  = Faker::Book.genre
   Category.create! name: name
+end
+books.each do |book|
+  book.category_ids = rand(1..5)
 end

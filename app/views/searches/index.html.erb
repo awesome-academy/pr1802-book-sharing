@@ -1,0 +1,43 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+  <%= t ".search" %>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"><%= t ".search" %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <%= form_for :search, url: searches_path, method: :get do |f| %>
+        <div class="modal-body">
+          <%= f.label :title %>
+          <%= f.text_field :name, class: "form-control" %>
+
+          <%= f.label :author_ids %>
+          <%= f.collection_check_boxes :author_ids, Author.all, :id, :name, include_hidden: false %>
+          <br>
+          <%= f.label :category_ids %>
+          <%= f.collection_check_boxes :category_ids, Category.all, :id, :name, include_hidden: false %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t ".close" %></button>
+          <%= f.submit t(".save"), class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<% if @results %>
+  <% @results.each do |result| %>
+    <li>
+      <%= result.name %>
+    </li>
+  <% end %>
+<% end %>

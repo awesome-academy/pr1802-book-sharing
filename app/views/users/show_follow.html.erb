@@ -20,7 +20,7 @@
             <% unless current_user? @user %>
               <span class="dot"></span>
               <span id="follow_form">
-                <%= render "users/follow_form" if logged_in? %>
+                <%= render "users/follow_form", user: @user if logged_in? %>
               </span>
             <% end %>
           </div>

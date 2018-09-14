@@ -7,9 +7,6 @@
         <div class="row post-top-meta authorpage">
           <div class="col-md-10 col-xs-12">
             <h1><%= @user.name %></h1>
-            <section class="stats">
-              <%= render "shared/stats", user: @user %>
-            </section>
             <span class="author-description">
               <%= t ".dummy_description" %>
             </span>
@@ -23,7 +20,7 @@
             <% unless current_user? @user %>
               <span class="dot"></span>
               <span id="follow_form">
-                <%= render "follow_form" if logged_in? %>
+                <%= render "follow_form", user: @user if logged_in? %>
               </span>
             <% end %>
           </div>
