@@ -7,7 +7,7 @@ class Book < ApplicationRecord
   has_many :categories, through: :book_categories
   has_many :book_authors
   has_many :authors, through: :book_authors
-  default_scope ->{order(created_at: :desc)}
+  scope :order_sort, -> { order created_at: :desc }
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
   validates :description, presence: true, length: {maximum: 800}

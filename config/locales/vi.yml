@@ -124,3 +124,15 @@ vi:
         "Core member of Team 3 and creater of <b>"Modern Book Sharing"</b>
         theme that you're currently previewing. Developing semi-professional
         projects since 2012."
+  comments:
+    comment:
+      commented: "bình luận "
+      edit: "Sửa"
+      delete: "Xóa"
+      confirm: "Bạn có chắn chắn xóa không?"
+      updated: "cập nhật"
+      placeholder: "Bình luận..."
+      create: "Tạo bình luận"
+    form:
+      placeholder: "Bình luận..."
+      create: "Tạo bình luận"

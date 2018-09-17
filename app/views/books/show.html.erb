@@ -80,8 +80,8 @@
             <% end %>
             <br>
             <span class="post-date">
-               <strong><%= t ".average_rating" %></strong>
-               <span id="star" data=<%= @book.average_rating %>></span>
+              <strong><%= t ".average_rating" %></strong>
+              <span id="star" data=<%= @book.average_rating %>></span>
             </span>
             <br>
             <span class="post-date">
@@ -117,11 +117,24 @@
         </ul>
       </div>
       <!-- End Tags -->
+      
+      <!-- Begin Comments -->
+      <h3><%= t ".comment" %></h3>
+      <div class="comments" id="comment_body">
+        <%= render @comments %>
+      </div>
+      <div id="comment_form">
+        <% if current_user? @user %>  
+          <%= render "comments/form" %>
+        <% end %>
+      </div>
+      <!-- End Comments -->
 
     </div>
     <!-- End Post -->
 
   </div>
+
 </div>
 <!-- End Article
 ================================================== -->

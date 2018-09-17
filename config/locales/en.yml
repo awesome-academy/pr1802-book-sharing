@@ -155,3 +155,15 @@ en:
         "Core member of Team 3 and creater of <b>"Modern Book Sharing"</b>
         theme that you're currently previewing. Developing semi-professional
         projects since 2012."
+  comments:
+    comment:
+      commented: "Commented %{time} ago."
+      edit: "Edit"
+      delete: "Delete"
+      confirm: "You sure?"
+      updated: "Updated %{time} ago."
+      placeholder: "Comment..."
+      create: "Create comment"
+    form:
+      placeholder: "Comment..."
+      create: "Create comment"
