@@ -16,7 +16,7 @@ class BooksController < ApplicationController
       @user = @book.user
       @rating = current_user.ratings.find_or_initialize_by book_id: @book.id
       @comments = @book.comments.all
-      @comment = @book.comments.build(user_id: current_user.id) if logged_in?
+      @comment = @book.comments.build
     end
   end
 

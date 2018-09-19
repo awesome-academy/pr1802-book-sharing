@@ -5,10 +5,10 @@ en:
   books:
     show:
       flash_info: "Book does not exist!"
-    update:
-      flash_success: "Book updated!"
     create:
       flash_success: "Book created!"
+    update:
+      flash_success: "Book updated!"
     destroy:
       flash_success: "Book deleted"
   categories:
@@ -20,6 +20,11 @@ en:
       flash_success: "Category deleted"
     find_category:
       flash_info: "Category does not exist!"
+  comments:
+    create:
+      flash_success: "Comment created!"
+    destroy:
+      flash_success: "Comment deleted"
   sessions:
     create:
       message: "Account not activated. Check your email for the activation link."

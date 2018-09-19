@@ -119,16 +119,14 @@
         </ul>
       </div>
       <!-- End Tags -->
-      
+
       <!-- Begin Comments -->
       <h3><%= t ".comment" %></h3>
-      <div class="comments" id="comment_body">
-        <%= render @comments %>
+      <div id="comments">
+        <%= render @comments, book: @book %>
       </div>
       <div id="comment_form">
-        <% if current_user? @user %>  
-          <%= render "comments/form" %>
-        <% end %>
+        <%= render "comments/form", comment: @comment, book: @book %>
       </div>
       <!-- End Comments -->
 

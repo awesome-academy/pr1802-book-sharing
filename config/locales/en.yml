@@ -68,7 +68,6 @@ en:
       publish: "Publish"
     show:
       share: "Share"
-      comment: "Comment"
       dummy_description: |
         "Core member of Team 3 and creater of <b>"Modern Book Sharing"</b>
         theme that you're currently previewing. Developing semi-professional
@@ -80,6 +79,7 @@ en:
       delete_confirm: "Are you sure?"
       average_rating: "Averate rating:"
       your_rating: "Your rating:"
+      comment: "Comment"
       dummy_related_title: "How travelling can change your life"
   categories:
     form:
@@ -166,8 +166,6 @@ en:
       delete: "Delete"
       confirm: "You sure?"
       updated: "Updated %{time} ago."
-      placeholder: "Comment..."
-      create: "Create comment"
     form:
       placeholder: "Comment..."
-      create: "Create comment"
+      comment: "Comment"
