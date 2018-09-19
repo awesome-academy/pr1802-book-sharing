@@ -2,8 +2,8 @@ class SearchesController < ApplicationController
   def index
     if params[:search]
       @results = Book.all
-      if params[:search][:name].present?
-        @results = @results.by_title params[:search][:name]
+      if params[:search][:title].present?
+        @results = @results.by_title params[:search][:title]
       end
       if params[:search][:author_ids].present?
         @results = @results.by_author_ids params[:search][:author_ids]

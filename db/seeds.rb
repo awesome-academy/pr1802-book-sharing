@@ -15,28 +15,22 @@ User.create!(name: "Example User",
     activated_at: Faker::Time.backward(14, :evening))
 end
 
-users = User.order(:created_at).take(6)
-50.times do
-  name = Faker::Book.title
-  description = Faker::Lorem.sentence(5)
-  users.each do |user|
-    user.books.create!(name: name, description: description)
-  end
-end
-
-books = Book.all
 10.times do |n|
   name  = Faker::Book.author
   Author.create! name: name
-end
-books.each do |book|
-  book.author_ids = rand(1..10)
 end
 
 5.times do |n|
   name  = Faker::Book.genre
   Category.create! name: name
 end
-books.each do |book|
-  book.category_ids = rand(1..5)
+
+users = User.order(:created_at).take 6
+50.times do
+  title = Faker::Book.title
+  description = Faker::Lorem.sentence 5
+  users.each do |user|
+    user.books.create! title: title, description: description,
+      author_ids: rand(1..10), category_ids: rand(1..5)
+  end
 end

@@ -17,7 +17,7 @@
       <%= form_for :search, url: searches_path, method: :get do |f| %>
         <div class="modal-body">
           <%= f.label :title %>
-          <%= f.text_field :name, class: "form-control" %>
+          <%= f.text_field :title, class: "form-control" %>
 
           <%= f.label :author_ids %>
           <%= f.collection_check_boxes :author_ids, Author.all, :id, :name, include_hidden: false %>
@@ -37,7 +37,7 @@
 <% if @results %>
   <% @results.each do |result| %>
     <li>
-      <%= result.name %>
+      <%= result.title %>
     </li>
   <% end %>
 <% end %>
