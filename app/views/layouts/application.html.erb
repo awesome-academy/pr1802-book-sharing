@@ -13,6 +13,24 @@
   </head>
 
   <body>
+    <div id="fb-root"></div> 
+    <script>
+      $(document).ready(function(){
+        window.fbAsyncInit = function () {
+          FB.init({ appId: '522693698177248', cookie: true, xfbml: true, oauth: true });
+          if (typeof facebookInit == 'function') {
+            facebookInit();
+          }
+        };
+
+        (function(d){
+          var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+          js = d.createElement('script'); js.id = id; js.async = true;
+          js.src = "//connect.facebook.net/en_US/all.js";
+          d.getElementsByTagName('head')[0].appendChild(js);
+        }(document));
+      });
+    </script>
     <%= render "layouts/header" %>
     <div class="container">
       <% flash.each do |message_type, message| %>

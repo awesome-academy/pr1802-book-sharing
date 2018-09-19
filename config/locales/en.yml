@@ -106,6 +106,7 @@ en:
     new:
       title: "Log in"
       submit: "Log in"
+      login_facebook: "Login via Facebook"
       new_user: "New user?"
       sign_up_now: "Sign up now!"
   shared:

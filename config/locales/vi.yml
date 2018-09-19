@@ -71,6 +71,7 @@ vi:
     new:
       title: "Đăng nhập"
       submit: "Đăng nhập"
+      login_facebook: "đăng nhập qua Facebook"
       new_user: "Người dùng mới?"
       sign_up_now: "Đăng ký ngay!"
   shared:
