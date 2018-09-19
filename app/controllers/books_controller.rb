@@ -8,15 +8,16 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find_by id: params[:id]
-    @comments = @book.comments.all
-    @comment = @book.comments.build(user_id: current_user.id) if logged_in?
+
     if @book.nil?
       flash[:info] = t ".flash_info"
       redirect_to root_url
     else
       @user = @book.user
+      @rating = current_user.ratings.find_or_initialize_by book_id: @book.id
+      @comments = @book.comments.all
+      @comment = @book.comments.build(user_id: current_user.id) if logged_in?
     end
-    @rating = current_user.ratings.find_or_initialize_by book_id: @book.id
   end
 
   def new
@@ -25,9 +26,10 @@ class BooksController < ApplicationController
 
   def create
     @book = current_user.books.build book_params
+
     if @book.save
       flash[:success] = t ".flash_success"
-      redirect_to root_url
+      redirect_to @book
     else
       render "static_pages/home"
     end
@@ -55,7 +57,7 @@ class BooksController < ApplicationController
   attr_reader :book
 
   def book_params
-    params.require(:book).permit :name, :description, :picture,
+    params.require(:book).permit :name, :description, pictures: [],
       category_ids: [], author_ids: []
   end
 

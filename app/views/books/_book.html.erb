@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-md-5 wrapthumbnail">
       <a href="#">
-        <% if book.picture? %>
-          <div class="thumbnail" style="background-image:url(<%= book.picture.url %>);">
+        <% if book.pictures? %>
+          <div class="thumbnail" style="background-image:url(<%= book.pictures.first.url %>);">
           </div>
         <% end %>
       </a>

@@ -41,3 +41,6 @@
 # Ignore framgia-ci generated files
 /.framgia-ci-reports
 /.framgia-ci-result.temp.yml
+
+# Ignore uploaded test images.
+/public/uploads

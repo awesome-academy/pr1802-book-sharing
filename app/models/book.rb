@@ -3,17 +3,22 @@ class Book < ApplicationRecord
   has_one :source, dependent: :destroy
   has_many :ratings, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :book_categories
+  has_many :book_categories, dependent: :destroy
   has_many :categories, through: :book_categories
-  has_many :book_authors
+  has_many :book_authors, dependent: :destroy
   has_many :authors, through: :book_authors
-  scope :order_sort, -> { order created_at: :desc }
-  mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
   validates :description, presence: true, length: {maximum: 800}
   validate :picture_size
 
+  mount_uploaders :pictures, PictureUploader
+  serialize :pictures, JSON
+
+  # General scope
+  scope :newest_to_oldest, ->{order created_at: :desc}
+  # static_pages/home scope
   scope :recently_published, ->{order(created_at: :desc).limit 6}
+  # search/index scope
   scope :by_title, ->(name){where "name like '%#{name}%'"}
   scope :by_author_ids, ->(author_ids) do
     joins(:book_authors).where "author_id IN (?)", author_ids
@@ -21,6 +26,7 @@ class Book < ApplicationRecord
   scope :by_category_ids, ->(category_ids) do
     joins(:book_categories).where "category_id IN (?)", category_ids
   end
+  # books/index scope
   scope :find_feed, ->(following_ids){where "user_id IN (?)", following_ids}
 
   def average_rating
@@ -33,8 +39,10 @@ class Book < ApplicationRecord
 
   # Validates the size of an uploaded picture.
   def picture_size
-    if picture.size > 5.megabytes
-      errors.add(:picture, "should be less than 5MB")
+    pictures.each do |picture|
+      if picture.size > 5.megabytes
+        errors.add :picture, t(".picture_size_error")
+      end
     end
   end
 end

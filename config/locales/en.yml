@@ -30,6 +30,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    attributes:
+      model:
+        picture_size_error: "should be less than 5MB"
   layouts:
     header:
       home: "Home"
