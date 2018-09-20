@@ -2,3 +2,4 @@ scss_files: 'app/assets/stylesheets/**'
 exclude:
   - 'app/assets/stylesheets/application.scss'
   - 'vendor/assets/**'
+  - 'app/assets/stylesheets/_variables.scss'
