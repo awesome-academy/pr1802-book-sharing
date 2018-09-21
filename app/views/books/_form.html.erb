@@ -4,12 +4,17 @@
     <%= f.label :title %>
     <%= f.text_field :title, class: "form-control" %>
 
+    <div>
+      <%= f.label :status %>
+      <%= f.collection_radio_buttons :status, Book.statuses.map{|key, value| [t(".#{key}"), key]}, :last, :first %>
+    </div>
+
     <%= f.label :description %>
     <%= f.cktext_area :description, rows: 10 %>
 
     <%= f.label :categories %>
     <ul class="book_form">
-      <%= collection_check_boxes(:book, :category_ids, Category.all, :id, :name) do |category| %>
+      <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |category| %>
         <li>
           <%= category.label("data-value": category.value) { category.check_box + category.text }%>
         </li>
@@ -18,7 +23,7 @@
 
     <%= f.label :authors %>
     <ul class="book_form">
-      <%= collection_check_boxes(:book, :author_ids, Author.all, :id, :name) do |author| %>
+      <%= f.collection_check_boxes :author_ids, Author.all, :id, :name do |author| %>
         <li>
           <%= author.label("data-value": author.value) { author.check_box + author.text }%>
         </li>

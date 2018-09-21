@@ -5,10 +5,10 @@ ruby "2.5.1"
 
 gem "bcrypt", "3.1.12"
 gem "bootsnap", ">= 1.1.0", require: false
-gem "bootstrap-will_paginate"
 gem "bootstrap", "~> 4.1.3"
-gem "carrierwave-i18n"
+gem "bootstrap-will_paginate"
 gem "carrierwave", "1.2.2"
+gem "carrierwave-i18n"
 gem "ckeditor"
 gem "coffee-rails", "~> 4.2"
 gem "faker", "1.7.3"
@@ -27,6 +27,7 @@ gem "will_paginate", "~> 3.1.0"
 group :development, :test do
   gem "autoprefixer-rails"
   gem "better_errors"
+  gem "binding_of_caller"
   gem "brakeman", require: false
   gem "bundler-audit"
   gem "byebug", platforms: %i(mri mingw x64_mingw)

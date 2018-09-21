@@ -31,6 +31,6 @@ users = User.order(:created_at).take 6
   description = Faker::Lorem.sentence 5
   users.each do |user|
     user.books.create! title: title, description: description,
-      author_ids: rand(1..10), category_ids: rand(1..5)
+      author_ids: rand(1..10), category_ids: rand(1..5), status: :completed
   end
 end

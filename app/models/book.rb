@@ -7,6 +7,7 @@ class Book < ApplicationRecord
   has_many :categories, through: :book_categories
   has_many :book_authors, dependent: :destroy
   has_many :authors, through: :book_authors
+
   validates :user_id, presence: true
   validates :title, presence: true
   validates :description, presence: true, length: {maximum: 800}
@@ -17,8 +18,10 @@ class Book < ApplicationRecord
   mount_uploaders :pictures, PictureUploader
   serialize :pictures, JSON
 
+  enum status: {on_going: 0, completed: 1}, _suffix: true
+
   # General scope
-  scope :newest_to_oldest, ->{order created_at: :desc}
+  scope :top_to_bottom, ->{order created_at: :desc}
   # static_pages/home scope
   scope :recently_published, ->{order(created_at: :desc).limit 6}
   # search/index scope

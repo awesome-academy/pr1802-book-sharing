@@ -58,6 +58,9 @@ en:
       edit: "Edit"
       delete: "Delete"
       destroy_confirm: "Are you sure?"
+    form:
+      on_going: "On Going"
+      completed: "Completed"
     edit:
       title: "Edit book"
       update_book: "Update your book"

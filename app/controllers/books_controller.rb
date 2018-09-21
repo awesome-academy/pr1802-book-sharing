@@ -3,7 +3,8 @@ class BooksController < ApplicationController
   before_action :correct_user, only: %i(edit update destroy)
 
   def index
-    @books = Book.find_feed(current_user.following_ids << current_user.id).paginate page: params[:page]
+    @books = Book.find_feed(current_user.following_ids << current_user.id)
+      .top_to_bottom.paginate page: params[:page]
   end
 
   def show
@@ -57,7 +58,7 @@ class BooksController < ApplicationController
   attr_reader :book
 
   def book_params
-    params.require(:book).permit :title, :description, pictures: [],
+    params.require(:book).permit :title, :status, :description, pictures: [],
       category_ids: [], author_ids: []
   end
 

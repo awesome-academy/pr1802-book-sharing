@@ -23,6 +23,9 @@ vi:
       edit: "Sửa"
       delete: "Xóa"
       destroy_confirm: "Bạn chắc chắn chứ?"
+    form:
+      on_going: "Đang Tiếp Diễn"
+      completed: "Đã Hoàn Thành"
     edit:
       title: "Chỉnh sửa sách"
       update_book: "Cập nhật sách của bạn"
