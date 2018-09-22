@@ -18,16 +18,16 @@
           <div class="wrapfooter">
             <span class="meta-footer-thumb">
               <%= link_to gravatar_for(book.user, size: 50,
-                alt: book.user.name), book.user %>
+                alt: book.user_name), book.user %>
             </span>
             <span class="author-meta">
               <span class="post-name">
-                <%= link_to book.user.name, book.user %>
+                <%= link_to book.user_name, book.user %>
               </span>
               <br/>
               <span class="post-date">
                 <%= book.created_at.strftime("%d %b %Y") %>
-                <% if current_user?(book.user) %>
+                <% if current_user? book.user %>
                   <span class="dot"></span>
                   <%= link_to t(".edit"), edit_book_path(book) %>
                   <span class="dot"></span>
