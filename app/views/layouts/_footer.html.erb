@@ -1,8 +1,8 @@
 <div class="footer">
   <p class="pull-left"><%= t(".copyright", year: Time.now.year).html_safe %></p>
   <p class="pull-right">
-    <%= t(".theme_by", link: "https://www.facebook.com/manhcuongdtbk",
-      author: "manhcuongdtbk").html_safe %>
+    <%= t(".theme_by", link: Settings.author.facebook,
+      author: Settings.author.name).html_safe %>
   </p>
   <div class="clearfix">
   </div>
