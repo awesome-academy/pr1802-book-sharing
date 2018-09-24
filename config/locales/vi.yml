@@ -112,6 +112,8 @@ vi:
       unfollow: "Bơ"
     index:
       title: "Tất cả người dùng"
+      export_csv: "CSV"
+      export_xls: "Excel"
     new:
       title: "Đăng ký"
       create_my_account: "Tạo tài khoản"
