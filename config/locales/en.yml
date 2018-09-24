@@ -147,6 +147,8 @@ en:
       unfollow: "Unfollow"
     index:
       title: "All users"
+      export_csv: "CSV"
+      export_xls: "Excel"
     new:
       title: "Sign up"
       create_my_account: "Create my account"

@@ -4,6 +4,13 @@
 <ul class="users">
   <%= render @users %>
 </ul>
+<% if current_user.admin? && !current_user?(@user )%>
+  <p>
+    Download: 
+    <%= link_to t(".export_csv"), users_path(format: "csv") %>
+    <%= link_to t(".export_xls"), users_path(format: "xls") %>
+  </p>
+<% end %>
 
 <%= will_paginate @users,
   renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer,
