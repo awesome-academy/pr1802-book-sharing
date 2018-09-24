@@ -20,6 +20,8 @@ class Book < ApplicationRecord
 
   enum status: {on_going: 0, completed: 1}, _suffix: true
 
+  delegate :name, to: :user, prefix: true, allow_nil: true
+
   # General scope
   scope :top_to_bottom, ->{order created_at: :desc}
   # static_pages/home scope
