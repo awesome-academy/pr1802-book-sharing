@@ -4,7 +4,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.find_feed(current_user.following_ids << current_user.id)
-      .top_to_bottom.paginate page: params[:page]
+      .created_at_desc.paginate page: params[:page]
   end
 
   def show
@@ -16,6 +16,7 @@ class BooksController < ApplicationController
     else
       @user = @book.user
       @rating = current_user.ratings.find_or_initialize_by book_id: @book.id
+      @books_related = Book.related_books(@book).created_at_desc
       @comments = @book.comments.all
       @comment = @book.comments.build
     end

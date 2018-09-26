@@ -23,7 +23,7 @@ class Book < ApplicationRecord
   delegate :name, to: :user, prefix: true, allow_nil: true
 
   # General scope
-  scope :top_to_bottom, ->{order created_at: :desc}
+  scope :created_at_desc, ->{order created_at: :desc}
   # static_pages/home scope
   scope :recently_published, ->{order(created_at: :desc).limit 6}
   # search/index scope
@@ -36,12 +36,17 @@ class Book < ApplicationRecord
   end
   # books/index scope
   scope :find_feed, ->(following_ids){where "user_id IN (?)", following_ids}
-
-  def average_rating
-    return 0 if ratings.blank?
-
-    ratings.sum(:score) / ratings.size
+  # book/show_scope
+  scope :related_books, -> (book) do
+    joins(:book_categories).where("category_id IN (?)", book.category_ids)
+      .where.not(id: book.id).distinct.limit 3
   end
+
+  # def average_rating
+  #   return 0 if ratings.blank?
+  #
+  #   ratings.sum(:score) / ratings.size
+  # end
 
   private
 
