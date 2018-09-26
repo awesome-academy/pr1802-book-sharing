@@ -10,7 +10,7 @@ class BooksController < ApplicationController
   def show
     @book = Book.find_by id: params[:id]
 
-    if @book.nil?
+    if @book.blank?
       flash[:info] = t ".flash_info"
       redirect_to root_url
     else
@@ -64,6 +64,6 @@ class BooksController < ApplicationController
 
   def correct_user
     @book = current_user.books.find_by id: params[:id]
-    redirect_to root_url if book.nil?
+    redirect_to root_url if book.blank?
   end
 end
