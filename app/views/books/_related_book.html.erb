@@ -1,0 +1,41 @@
+<div class="graybg">
+  <div class="container">
+    <div class="row listrecent listrelated">
+      <% books_related.each do |book| %>
+        <div class="col-md-4">
+          <div class="card">
+            <%= link_to book do %>
+              <% if book.pictures.present? %>
+                <%= image_tag book.pictures.first.url, class: "img-fluid img-thumb" %>
+              <% else %>
+                <%= image_tag "demopic/9.jpg", class: "img-fluid img-thumb" %>
+              <% end %>
+            <% end %>
+            <div class="card-block">
+              <h2 class="card-title">
+                <%= link_to book.title %>
+              </h2>
+              <div class="metafooter">
+                <div class="wrapfooter">
+                  <span class="meta-footer-thumb">
+                    <%= link_to gravatar_for(book.user, size: 50, alt: book.user_name),
+                      book.user %>
+                  </span>
+                  <span class="author-meta">
+                    <span class="post-name">
+                      <%= link_to book.user_name, book.user %>
+                    </span>
+                    <br/>
+                    <span class="post-date">
+                      <%= book.created_at.strftime("%d %b %Y") %>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
