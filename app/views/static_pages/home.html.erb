@@ -6,6 +6,20 @@
   <div class="card-columns listfeaturedtag">
     <%= render partial: "books/book", collection: @recently_published, as: :book %>
   </div>
+  <br>
+  <div class="section-title">
+    <h2><span><%= t ".completed" %></span></h2>
+  </div>
+  <div class="card-columns listfeaturedtag">
+    <%= render partial: "books/book", collection: @completed, as: :book %>
+  </div>
+  <br>
+  <div class="section-title">
+    <h2><span><%= t ".on_going" %></span></h2>
+  </div>
+  <div class="card-columns listfeaturedtag">
+    <%= render partial: "books/book", collection: @on_going, as: :book %>
+  </div>
   </section>
 <% else %>
   <div class="mainheading center">
