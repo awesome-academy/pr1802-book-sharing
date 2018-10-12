@@ -2,13 +2,14 @@ vi:
   layouts:
     header:
       home: "Trang chủ"
+      activities: "Hoạt động"
       language: "Ngôn ngữ"
       english: "Tiếng Anh"
       vietnamese: "Tiếng Việt"
       users: "Người dùng"
       books: "Sách"
       all_books: "Tất cả sách"
-      upload_book: "Tải sách mới lên"
+      upload_book: "Tải lên"
       categories: "Danh mục"
       account: "Tài khoản"
       profile: "Hồ sơ"
@@ -36,10 +37,6 @@ vi:
       publish: "Xuất bản"
     show:
       share: "Chia sẻ"
-      dummy_description: |
-        "Core member of Team 3 and creater of <b>"Modern Book Sharing"</b>
-        theme that you're currently previewing. Developing semi-professional
-        projects since 2012."
       publised_at: "Xuất bản"
       updated_at: "Cập nhật"
       edit: "Chỉnh sửa"
@@ -48,7 +45,6 @@ vi:
       average_rating: "Xếp hạng trung bình:"
       your_rating: "Xếp hạng của bạn:"
       comment: "Bình luận"
-      dummy_related_title: "How travelling can change your life"
   categories:
     form:
       name: "Tên"
@@ -87,13 +83,8 @@ vi:
   static_pages:
     home:
       recently_published: "Xuất Bản Gần Đây"
-      dummy_title: "We're living some strange times"
-      dummy_content: |
-        "This is a longer card with supporting text below as a natural lead-in
-        to additional content. This content is a little bit longer."
-      dummy_user: "Steve"
-      dummy_created_at: "22 July 2017"
-      dummy_reading_time: "6 min read"
+      completed: "Đã Hoàn Thành"
+      on_going: "Đang Tiếp Diễn"
       site_title: "Modern Book Sharing"
       lead: "Nền tảng chia sẻ sách tốt nhất cho mọi người"
       sign_up_now: "Đăng ký ngay!"
@@ -118,18 +109,10 @@ vi:
       title: "Đăng ký"
       create_my_account: "Tạo tài khoản"
     show:
-      dummy_description: |
-        "Core member of Team 3 and creater of <b>"Modern Book Sharing"</b>
-        theme that you're currently previewing. Developing semi-professional
-        projects since 2012."
       book: "Sách"
       books: "Sách"
     show_follow:
       book: "Số sách:"
-      dummy_description: |
-        "Core member of Team 3 and creater of <b>"Modern Book Sharing"</b>
-        theme that you're currently previewing. Developing semi-professional
-        projects since 2012."
   comments:
     comment:
       commented: "Bình luận %{time} trước."

@@ -37,13 +37,14 @@ en:
   layouts:
     header:
       home: "Home"
+      activities: "Activities"
       language: "Language"
       english: "English"
       vietnamese: "Vietnamese"
       users: "Users"
       books: "Books"
       all_books: "All books"
-      upload_book: "Upload a new book"
+      upload_book: "Upload"
       categories: "Categories"
       account: "Account"
       profile: "Profile"
@@ -71,10 +72,6 @@ en:
       publish: "Publish"
     show:
       share: "Share"
-      dummy_description: |
-        "Core member of Team 3 and creater of <b>"Modern Book Sharing"</b>
-        theme that you're currently previewing. Developing semi-professional
-        projects since 2012."
       publised_at: "Published at"
       updated_at: "Updated at"
       edit: "Edit"
@@ -83,7 +80,6 @@ en:
       average_rating: "Averate rating:"
       your_rating: "Your rating:"
       comment: "Comment"
-      dummy_related_title: "How travelling can change your life"
   categories:
     form:
       name: "Name"
@@ -122,13 +118,8 @@ en:
   static_pages:
     home:
       recently_published: "Recently Published"
-      dummy_title: "We're living some strange times"
-      dummy_content: |
-        "This is a longer card with supporting text below as a natural lead-in
-        to additional content. This content is a little bit longer."
-      dummy_user: "Steve"
-      dummy_created_at: "22 July 2017"
-      dummy_reading_time: "6 min read"
+      completed: "Completed"
+      on_going: "On Going"
       site_title: "Modern Book Sharing"
       lead: "The best book sharing platform for everyone"
       sign_up_now: "Sign up now!"
@@ -153,18 +144,10 @@ en:
       title: "Sign up"
       create_my_account: "Create my account"
     show:
-      dummy_description: |
-        "Core member of Team 3 and creater of <b>"Modern Book Sharing"</b>
-        theme that you're currently previewing. Developing semi-professional
-        projects since 2012."
       book: "Book"
       books: "Books"
     show_follow:
       book: "Books:"
-      dummy_description: |
-        "Core member of Team 3 and creater of <b>"Modern Book Sharing"</b>
-        theme that you're currently previewing. Developing semi-professional
-        projects since 2012."
   comments:
     comment:
       commented: "Commented %{time} ago."

@@ -35,9 +35,7 @@
 </div>
 
 <% if @results %>
-  <% @results.each do |result| %>
-    <li>
-      <%= result.title %>
-    </li>
-  <% end %>
+  <div class="card-columns listfeaturedtag">
+    <%= render partial: "books/book", collection: @results, as: :book %>
+  </div>
 <% end %>
